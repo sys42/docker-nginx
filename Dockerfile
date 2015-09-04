@@ -1,4 +1,4 @@
-FROM sys42/docker-base:1.0.0
+FROM sys42/docker-base:1.1.0
 MAINTAINER Tom Nussbaumer <thomas.nussbaumer@gmx.net>
 
 ADD . /_tmp
@@ -25,4 +25,5 @@ RUN set -e                                                  && \
 
 EXPOSE 443
 EXPOSE 80
-CMD ["/sbin/my_init"]
+
+ENTRYPOINT ["/sbin/my_init", "--"]
